@@ -25,7 +25,7 @@ const enderFriend = () => {
     //console.log(dataBuffer)
     const dataJSON = dataBuffer.toString()
     //console.log(dataJSON)
-    // /console.log(JSON.parse(dataJSON)) 
+    // console.log(JSON.parse(dataJSON)) 
     return JSON.parse(dataJSON) 
 }
 // Serialise Endpoints
@@ -40,14 +40,16 @@ const getLinks = () => {
 }
 const Links = getLinks()
 
-console.log(Links)
+console.log('Endpoints:', Links)
 
 // Define Home Page
 app.get('/', (req, res) => {
     res.render('index', {title: 'Home', body: 'Welcome, this is the Home Page', template: 'NA', Links})
+    console.log('Endpoints:', Links)
 })
 app.get('/home', (req, res) => {
     res.render('index', {title: 'Home', body: 'Welcome, this is the Home Page', template: 'NA', Links})
+    console.log('Endpoints:', Links)
 })
 
 // Present Endpoints
