@@ -1,0 +1,25 @@
+{
+  "name": "mowglixxcms",
+  "version": "0.0.1",
+  "description": "General purpose CMS with OpenAPI support and built in Developers Portal, made with Express.",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mowglixx/mowglixxCMS.git"
+  },
+  "keywords": [
+    "Express",
+    "Node",
+    "API",
+    "CMS"
+  ],
+  "author": "Daniel Monaghan",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/mowglixx/mowglixxCMS/issues"
+  },
+  "homepage": "https://github.com/mowglixx/mowglixxCMS"
+}
