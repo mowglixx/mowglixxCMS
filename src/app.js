@@ -20,13 +20,14 @@ app.listen(port, () => {
 const enderFriend = () => {
     const dataBuffer = fs.readFileSync('config/endpoints.json')
     const dataJSON = dataBuffer.toString()
+    console.log(JSON.parse(dataJSON))
     return JSON.parse(dataJSON)
 }
 
 const getLinks = () => {
     let Body = []
     Endpoints.forEach(({ endpoint }) => {
-        Body.push(endpoint)
+        Body.push(endpoint.path)
     })
     return Body
 }
@@ -37,13 +38,13 @@ const Links = getLinks()
 
 // Define Home Page
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Home', body: 'Welcome, this is the Home Page', template: 'NA', Links })
+    res.render('home', { title: 'Home', body: 'Welcome, this is the Home Page', template: 'NA', Links })
     console.log('Endpoints:', Links)
 })
 
 // Present Endpoints
-Endpoints.forEach(({ endpoint, title, body, template }) => {
-    app.get(`${'/' + endpoint}`, (req, res) => {
-        res.render('index', { endpoint, title, body, template, Links })
+Endpoints.forEach(({ endpoint, page }) => {
+    app.get(`${'/' + endpoint.path}`, (req, res) => {
+        res.render('index', { endpoint, page, Links })
     })
 });

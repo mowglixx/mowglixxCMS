@@ -3,7 +3,7 @@ include mixins/_Nav
 doctype html
 html
   head
-    title= 'mowglixxCMS' + endpoint.path + ' - ' + page.title
+    title= 'mowglixxCMS' + endpoint + ' - ' + title
     link(
       href='//cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' 
       rel='stylesheet' 
@@ -16,12 +16,12 @@ html
       .row
         section.jumbotron.text-center
           .container
-            h1 #{endpoint.path}
-            p.lead.text-muted #{'// '+page.subtitle}
+            h1 #{title}
+            p.lead.text-muted // Be Different
             p
-              a.btn.btn-primary.m-2(href="#") #{endpoint.path}
+              a.btn.btn-success.m-2(href="#") NoNo
       .row
-        p= page.body
+        p= body
   script(
     src='//cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js'
     integrity='sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj'
