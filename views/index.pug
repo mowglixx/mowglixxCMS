@@ -25,7 +25,7 @@ html
             h1 #{endpoint.path}
             p.lead.text-muted #{'// '+page.subtitle}
             p
-              a.btn.btn-primary.m-2(href="#") #{page.theme}
+              a.btn.btn-primary.m-2(href= '/'+endpoint.path) #{page.theme}
       .row
         p= page.body
   script(
