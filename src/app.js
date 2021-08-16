@@ -55,6 +55,6 @@ app.get('/home', (req, res) => {
 // Present Endpoints
 Endpoints.forEach(({endpoint, title, body, template}) => {
    app.get(`${'/'+endpoint}`, (req, res) => {
-       res.render('index', {title, body, template, Links})
+       res.render('index', {endpoint,title, body, template, Links})
    }) 
 });
