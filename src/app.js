@@ -32,7 +32,7 @@ const enderFriend = () => {
 const Endpoints = enderFriend()
 
 const getLinks = () => {
-    let Body = ['home']
+    let Body = []
     Endpoints.forEach(({endpoint}) => {
         Body.push(endpoint)
     })
