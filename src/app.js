@@ -2,8 +2,8 @@ const express = require('express')
 const fs = require('fs')
 
 // Port setttings
-const port = '3000'
-const host = 'localhost'
+const Port = '3000'
+const Host = 'localhost'
 
 // Define app as express app
 const app = express()
@@ -11,17 +11,18 @@ const app = express()
 // Set Template Engine
 app.set('view engine', 'pug')
 
-// make listen on defined port
-app.listen(port, () => {
-    console.log(`Server started on http://${host}:${port}`)
+// make listen on defined Port
+app.listen(Port, () => {
+    console.log(`Server started on http://${Host}:${Port}`)
 })
 
 // Load Endpoints
 const enderFriend = () => {
     const dataBuffer = fs.readFileSync('config/endpoints.json')
     const dataJSON = dataBuffer.toString()
-    console.log(JSON.parse(dataJSON))
-    return JSON.parse(dataJSON)
+    const returnData = JSON.parse(dataJSON)
+    console.log('enderFriend::returnData: \n%o',returnData)
+    return returnData
 }
 
 const getLinks = () => {
@@ -43,8 +44,8 @@ app.get('/', (req, res) => {
 })
 
 // Present Endpoints
-Endpoints.forEach(({ endpoint, page }) => {
+Endpoints.forEach(({ endpoint, page, user }) => {
     app.get(`${'/' + endpoint.path}`, (req, res) => {
-        res.render('index', { endpoint, page, Links })
+        res.render('index', { endpoint, page, user, Links })
     })
 });
