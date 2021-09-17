@@ -4,7 +4,7 @@
   "description": "General purpose CMS with OpenAPI support and built in Developers Portal, made with Express.",
   "main": "src/app.js",
   "scripts": {
-    "test": "nodemon src/app.js",
+    "server": "nodemon src/app.js",
     "start": "node src/app.js"
   },
   "repository": {
